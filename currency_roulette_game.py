@@ -37,5 +37,3 @@ def play(difficulty):
     else:
         print(f"You lose, the answer is {answer} \nacceptable range is {allowed_range}")
         return False
-
-play(3)

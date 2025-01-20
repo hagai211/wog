@@ -32,5 +32,3 @@ def play(difficulty):
     else:
         print(f"you lose! the correct number is {secret_number}")
         return False
-
-

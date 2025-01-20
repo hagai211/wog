@@ -49,5 +49,3 @@ def start_play():
             print('Goodbye, have a nice day')
             break
 
-
-start_play()

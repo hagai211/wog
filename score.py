@@ -10,4 +10,3 @@ def add_score(difficulty):
             file.write(str(current_score))
     except FileNotFoundError:
         return BAD_RETURN_CODE
-
