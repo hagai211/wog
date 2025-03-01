@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  main-score:
+    build: .
+    ports:
+      - "30000:30000"
+    volumes:
+      - "C:/Users/User/Desktop/DevOps/WOG Project/WorldOfGames/Scores.txt:/scores/Scores.txt"
