@@ -1,5 +1,4 @@
 import sys
-
 from selenium import webdriver
 import chromedriver_autoinstaller
 from selenium.common import NoSuchElementException
