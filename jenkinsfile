@@ -11,12 +11,14 @@ pipeline {
             steps {
                 sh 'docker-compose up -d --build'
             }
+        }
         stage('Test Application') {
             steps {
                 echo 'Running e2e tests...'
                 // The pipeline will fail if the python script returns a non-zero exit code.
                 sh 'python tests/e2e.py'
             }
+        }
         stage('Terminate and Push') {
             steps {
                 script {
@@ -30,7 +32,7 @@ pipeline {
                     docker tag main-score:latest hagai211/main-score:latest
                     docker push hagai211/main-score:latest
                     """
-                    }
+                
                 }
             }
 
