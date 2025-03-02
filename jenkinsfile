@@ -4,25 +4,36 @@ pipeline {
     stages {
         stage('checkout repo') {
             steps {
-                git branch: 'main', url: 'https://github.com/<organization>/<repo>.git'
+                checkout scm
             }
         }
-        stage('build docker image') {
+        stage('build docker image and run') {
             steps {
-                echo 'build'
+                sh 'docker-compose up -d --build'
             }
-        stage('run docker image') {
+        stage('Test Application') {
             steps {
-                echo 'run'
+                echo 'Running e2e tests...'
+                // The pipeline will fail if the python script returns a non-zero exit code.
+                sh 'python tests/e2e.py'
             }
-        stage('test application') {
+        stage('Terminate and Push') {
             steps {
-                echo 'test, if successfully continue if not failed the pipeline'
+                script {
+                    echo 'Terminating containers...'
+                    sh 'docker-compose down'
+
+                    // Optionally tag and push an image to a Docker registry
+                    // Example for Docker Hub; adjust registry/image names as needed
+                    echo 'Tagging and pushing Docker image...'
+                    sh """
+                    docker tag main-score:latest hagai211/main-score:latest
+                    docker push hagai211/main-score:latest
+                    """
+                    }
+                }
             }
-        stage('terminate and push') {
-            steps {
-                echo 'Hello from pipeline'
-            }
+
         }
     }
 }

@@ -26,10 +26,9 @@ def test_scores_service(url):
         return False
 
 
-def main_function(url):
-    if test_scores_service(url):
-        sys.exit(0)
-    else:
-        sys.exit(1)
+if test_scores_service('localhost:8777'):
+    sys.exit(0)
+else:
+    sys.exit(1)
 
 
