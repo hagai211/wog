@@ -24,9 +24,7 @@ pipeline {
                 script {
                     echo 'Terminating containers...'
                     sh 'docker-compose down'
-
-                    // Optionally tag and push an image to a Docker registry
-                    // Example for Docker Hub; adjust registry/image names as needed
+                    // Tag Image and push to docker hub
                     echo 'Tagging and pushing Docker image...'
                     sh """
                     docker tag main-score:latest hagai211/main-score:latest
