@@ -2,12 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Create a new file') {
+        stage('checkout repo') {
             steps {
-                sh 'touch new_file.txt'
+                git branch: 'main', url: 'https://github.com/<organization>/<repo>.git'
             }
         }
-        stage('Print messege') {
+        stage('build docker image') {
+            steps {
+                echo 'build'
+            }
+        stage('run docker image') {
+            steps {
+                echo 'run'
+            }
+        stage('test application') {
+            steps {
+                echo 'test, if successfully continue if not failed the pipeline'
+            }
+        stage('terminate and push') {
             steps {
                 echo 'Hello from pipeline'
             }
