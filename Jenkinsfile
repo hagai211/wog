@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Running e2e tests...'
                 // The pipeline will fail if the python script returns a non-zero exit code.
-                sh 'python tests/e2e.py'
+                sh '.venv/Scripts/python.exe tests/e2e.py'
             }
         }
         stage('Terminate and Push') {
