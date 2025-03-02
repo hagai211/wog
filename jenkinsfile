@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout repo') {
+            steps {
+                git branch: 'main', url: 'https://github.com/<organization>/<repo>.git'
+            }
+        }
+        stage('build docker image') {
+            steps {
+                echo 'build'
+            }
+        stage('run docker image') {
+            steps {
+                echo 'run'
+            }
+        stage('test application') {
+            steps {
+                echo 'test, if successfully continue if not failed the pipeline'
+            }
+        stage('terminate and push') {
+            steps {
+                echo 'Hello from pipeline'
+            }
+        }
+    }
+}
