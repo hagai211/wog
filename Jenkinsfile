@@ -17,7 +17,8 @@ pipeline {
                 echo 'Running e2e tests...'
 
                 // Run the test script and capture the exit code
-                def exitCode = sh(script: '.venv/Scripts/python.exe tests/e2e.py', returnStatus: true)
+                def exitCode
+                exitCode = sh(script: '.venv/Scripts/python.exe tests/e2e.py', returnStatus: true)
 
                 if (exitCode == 0) {
                     echo "Test passed! ✅ Continue..."
