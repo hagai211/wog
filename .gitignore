@@ -1,0 +1,30 @@
+# Ignore Python-related files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment files
+.env
+venv/
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore compiled files
+*.class
+*.o
+*.so
+
+# Ignore Docker build files
+*.tar
+docker-compose.override.yml
+
+# Ignore Jenkins build files
+workspace/
+builds/
+*.log
+
+# Ignore database files
+*.sqlite3
+db.sqlite3
