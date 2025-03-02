@@ -37,7 +37,7 @@ pipeline {
                     // Tag Image and push to docker hub
                     echo 'Tagging and pushing Docker image...'
                     sh """
-                    docker tag main-score:latest hagai211/main-score:latest
+                    docker tag wog-main-score hagai211/main-score:latest
                     docker push hagai211/main-score:latest
                     """
                 
