@@ -14,16 +14,18 @@ pipeline {
         }
         stage('Test Application') {
             steps {
-                echo 'Running e2e tests...'
+                script {
+                    echo 'Running e2e tests...'
 
-                // Run the test script and capture the exit code
-                def exitCode = sh(script: '.venv/Scripts/python.exe tests/e2e.py', returnStatus: true)
+                    // Run the test script and capture the exit code
+                    def exitCode = sh(script: '.venv/Scripts/python.exe tests/e2e.py', returnStatus: true)
 
-                if (exitCode == 0) {
-                    echo "Test passed! ✅ Continue..."
-                } else {
-                    echo "Test failed! ❌ Please check the logs."
-                    error("Stopping pipeline due to failed tests.") // Fails the stage explicitly
+                    if (exitCode == 0) {
+                        echo "Test passed! ✅ Continue..."
+                    } else {
+                        echo "Test failed! ❌ Please check the logs."
+                        error("Stopping pipeline due to failed tests.") // Fails the stage explicitly
+                    }
                 }
             }
         }
