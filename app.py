@@ -1,6 +1,5 @@
-import guess_game
-import currency_roulette_game
-import memory_game
+from games import guess_game, currency_roulette_game, memory_game
+
 from score import add_score
 
 
