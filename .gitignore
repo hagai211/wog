@@ -6,6 +6,7 @@ __pycache__/
 # Ignore environment files
 .env
 .idea
+.venv
 
 # Ignore logs
 *.log
