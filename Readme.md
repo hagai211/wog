@@ -106,7 +106,6 @@ To **automatically trigger Jenkins** on every push:
 ---
 
 ## 🛋️ Running the Project Locally  
-### **Without Docker**  
 1. Clone the repository:  
    ```sh  
    git clone https://github.com/hagai211/wog.git  
@@ -125,13 +124,13 @@ To **automatically trigger Jenkins** on every push:
    python main_score.py  
    ```  
 
-### **With Docker**  
+### **With Docker (only for the score server)**  
 ```sh  
 docker-compose up -d --build  
 ```
 Then, open a browser and go to:  
 ```
-http://localhost:5000  
+http://localhost:8777  
 ```
 
 ---
