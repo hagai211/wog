@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     echo 'Terminating containers...'
-                    sh 'docker-compose down'
+                    sh "docker stop \$(docker ps -q --filter ancestor=scores-server:latest) || true"
                     // Tag Image and push to docker hub
                     echo 'Tagging and pushing Docker image...'
                     sh """
