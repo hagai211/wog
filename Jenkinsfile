@@ -7,9 +7,14 @@ pipeline {
                 checkout scm
             }
         }
-        stage('build docker image and run') {
+        stage('build docker image') {
             steps {
-                sh 'docker-compose up -d --build'
+                sh 'docker build -t scores-server .'
+            }
+        }
+        stage('run docker image') {
+            steps {
+                sh 'docker run -d -p 8777:30000 -v "./Scores.txt:/scores/Scores.txt" scores-server'
             }
         }
         stage('Test Application') {

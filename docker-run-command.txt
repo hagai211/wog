@@ -1,1 +1,1 @@
-docker run -p 8777:30000 -v "C:\Users\User\Desktop\DevOps\WOG Project\WorldOfGames\Scores.txt:/scores/Scores.txt" <image-name>:<image-tag>
+docker run -p 8777:30000 -v "C:\Users\User\Desktop\DevOps\WOG Project\WorldOfGames\Scores.txt:/scores/Scores.txt" scores-server
