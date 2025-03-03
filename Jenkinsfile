@@ -14,6 +14,7 @@ pipeline {
         }
         stage('run docker image') {
             steps {
+                // Creates a dummy Scores.txt file
                 sh 'docker run -d -p 8777:30000 -v "./Scores.txt:/scores/Scores.txt" scores-server'
             }
         }
