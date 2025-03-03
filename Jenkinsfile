@@ -29,7 +29,7 @@ pipeline {
                 }
             }
         }
-        stage('Terminate and Push') {
+        stage('Finalize') {
             steps {
                 script {
                     echo 'Terminating containers...'
