@@ -20,7 +20,7 @@ A number guessing game where the player must guess a **randomly generated number
 ---
 
 ### 2️⃣ Currency Roulette Game – `currency_roulette_game.py`  
-A game where the player must guess the **equivalent value of a randomly generated USD amount in Israeli Shekels (ILS)**, based on real-time exchange rates.  
+A game where the player must guess the **equivalent value of a randomly generated USD amount in ILS**, based on real-time exchange rates.  
 
 #### 🔹 Functions:  
 - **`get_money_interval()`** – Retrieves the USD to ILS exchange rate and calculates an acceptable range based on difficulty.  
