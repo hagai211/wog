@@ -88,6 +88,21 @@ A **Jenkinsfile** automates the deployment process with the following stages:
 
 ---
 
+---
+## ⚙️ Configuration
+
+**Configurable Parameters:**
+
+**Score Storage:** Mount Scores.txt, mounted as a Docker volume in docker-compose.yaml.
+
+**Flask Server Port:** Configurable via docker-compose.yml.
+
+**Docker Image Name & Tag:** Defined in Jenkinsfile for CI/CD deployment.
+
+**Docker Hub Username & Repository:** Defined in Jenkinsfile for CI/CD deployment.
+
+---
+
 ## 🔄 Continuous Deployment with GitHub & Jenkins  
 To **automatically trigger Jenkins** on every push:  
 
