@@ -6,4 +6,4 @@ services:
     ports:
       - "8777:30000"
     volumes:
-      - "C:/Users/User/Desktop/DevOps/WOG Project/WorldOfGames/Scores.txt:/scores/Scores.txt"
+      - "./Scores.txt:/scores/Scores.txt"
