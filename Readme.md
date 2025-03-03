@@ -1,4 +1,4 @@
-# WorldOfGames \U0001F3AE  
+# WorldOfGames
 
 ## Overview  
 WorldOfGames is a collection of **three interactive games** designed to challenge players' skills in memory, guessing, and currency conversion. The project is built using Python and includes a **score-tracking system** hosted on a Flask web server.  
